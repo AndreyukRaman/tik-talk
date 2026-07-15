@@ -1,6 +1,5 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
 import { Profile } from '../interfaces/profile.interface';
 import { environment } from '../../../environments/environment';
 
@@ -11,5 +10,9 @@ export class ProfileService {
 
   getTestAccounts() {
     return this.http.get<Profile[]>(`${this.baseApiUrl}/account/test_accounts`)
+  }
+
+  getMe(){
+    return this.http.get<Profile>(`${this.baseApiUrl}/account/me`)
   }
 }

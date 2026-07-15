@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import { tap } from 'rxjs';
+import { catchError, tap, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { TokenResponse } from './auth.interface';
 
@@ -30,6 +30,21 @@ export class AuthService {
     return this.http
       .post<TokenResponse>(`${this.baseApiUrl}/auth/token`, fd)
       .pipe(tap((res) => this.saveTokens(res)));
+  }
+
+  refreshAuthToken() {
+    const fd = new FormData();
+    fd.append('refresh_token', this.refreshToken ?? '');
+
+    return this.http
+      .post<TokenResponse>(`${this.baseApiUrl}/auth/refresh`, fd)
+      .pipe(
+        tap((res) => this.saveTokens(res)),
+        catchError((err) => {
+          this.logout();
+          return throwError(() => err);
+        })
+      );
   }
 
   logout() {
