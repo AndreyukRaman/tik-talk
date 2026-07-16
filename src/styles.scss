@@ -22,6 +22,7 @@ body{
   color: var(--light-color);
   font-family: "JetBrains Mono", monospace;
   background-image: url(/assets/imgs/background.png);
+  height: 100dvh;
 }
 
 
@@ -85,7 +86,7 @@ body{
   font-size: 12px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 500;
-  line-height: 16;
+  line-height: 16px;
 }
 
 .tt-control-label{

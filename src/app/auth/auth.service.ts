@@ -33,11 +33,10 @@ export class AuthService {
   }
 
   refreshAuthToken() {
-    const fd = new FormData();
-    fd.append('refresh_token', this.refreshToken ?? '');
-
     return this.http
-      .post<TokenResponse>(`${this.baseApiUrl}/auth/refresh`, fd)
+      .post<TokenResponse>(`${this.baseApiUrl}/auth/refresh`, {
+        refresh_token: this.refreshToken,
+      })
       .pipe(
         tap((res) => this.saveTokens(res)),
         catchError((err) => {

@@ -1,6 +1,8 @@
 :host{
-  display: block;
+  display: flex;
+  flex-direction: column;
   padding: 20px 12px;
+  background:var(--dark-color);
 }
 
 
@@ -56,4 +58,34 @@
 .to-subscribers-icon{
   width: 18px;
   height: 18px;
+}
+
+.sidebar__footer{
+  margin-top: auto;
+  background: var(--dark-hover-color) ;
+  border-radius: 2px;
+  padding: 4px 14px;
+  display:grid;
+  grid-template-columns: 32px 1fr 16px;
+  grid-gap:12px;
+  align-items: center;
+
+  img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+  }
+  .username-text{
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+}
+
+.settings-btn{
+  svg {
+    width: 13px;
+    height: 13px;
+    color: var(--primary-color);
+  }
 }
