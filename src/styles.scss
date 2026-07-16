@@ -6,6 +6,7 @@
   --light-color: #FFFFFF;
   --primary-color: #AE7AFF;
   --gray-color: #5F646D;
+  --dark-hover-color: #161616;
 }
 
 *,
@@ -78,6 +79,13 @@ body{
 .subtitle{
   font-size: 14px;
   line-height: 20px;
+}
+
+.medium-text{
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+  line-height: 16;
 }
 
 .tt-control-label{
