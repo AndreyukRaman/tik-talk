@@ -7,9 +7,16 @@
   </label>
 
   <label class="tt-control-label mb32">
+  <div class="password-input">
     Password
-    <input type="password" formControlName="password" placeholder="press Password" class="tt-input">
+    <input [type]="isPasswordVisible() ? 'text' : 'password'" formControlName="password" placeholder="press Password" class="tt-input">
+    <button type="button" class="show-password"
+            aria-label="show password"
+            [class.active]="isPasswordVisible()"
+            (click)="isPasswordVisible.update(v => !v)"></button>
+  </div>
   </label>
+
   <button class="btn btn-shadow" type="submit">Sign In</button>
 </form>
 <img src="/assets/svg/logo-big.png" alt="logo">

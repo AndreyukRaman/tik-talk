@@ -100,3 +100,11 @@ body{
   line-height: 21px;
   font-family: "JetBrains Mono", monospace;
 }
+
+.tt-input:-webkit-autofill,
+.tt-input:-webkit-autofill:hover,
+.tt-input:-webkit-autofill:focus{
+  -webkit-text-fill-color: var(--light-color);
+  -webkit-box-shadow: 0 0 0 1000px var(--dark-color) inset;
+  caret-color: var(--light-color);
+}
