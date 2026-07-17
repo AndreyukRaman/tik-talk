@@ -19,7 +19,7 @@ export class Sidebar {
   me = this.profileService.me;
 
   menuItems = [
-    { label: 'Home', icon: 'home', link: '' },
+    { label: 'Home', icon: 'home', link: 'profile/me' },
     { label: 'Chats', icon: 'chats', link: 'chats' },
     { label: 'Search', icon: 'search', link: 'search' },
   ];
