@@ -6,5 +6,36 @@
    <svg icon="settings" class="to-settings-icon"></svg>
    </a>
  </header>
+<main class="profile-page__body">
 
+<div>
+</div>
+
+  <div>
+    <h3 class="h6 mb16">Followers</h3>
+
+    <div class="subscribers-wrapper mb32">
+    @for (subscriber of subscribers$ | async; track subscriber.id) {
+      <a class="subscriber-avatar-btn" [routerLink]="['/profile', subscriber.id]" ]>
+        <img [src]="subscriber.avatarUrl | imgUrl" alt="">
+      </a>
+    }
+      <a class="to-subscribers-search" [routerLink]="['/search']">
+      </a>
+    </div>
+
+
+    <h3 class="h6 mb16">Skills</h3>
+    <div class="stack-wrapper mb32">
+    @for (skill of ['skill1', 'skill2', 'skill3', 'skill3', 'skill1', 'skill2']; track skill) {
+      <div class="skill-tag">{{skill}}</div>
+    }
+    </div>
+
+
+    <h3 class="h6 mb16">About Me</h3>
+   <p class="medium-text">{{profile.description}}</p>
+
+  </div>
+</main>
 }
