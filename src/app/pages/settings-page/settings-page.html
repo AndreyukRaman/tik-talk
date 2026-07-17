@@ -23,6 +23,12 @@
     <input type="text" class="tt-form-input" formControlName="username">
   </label>
 
+
+      <label class="tt-form-label">
+        <span class="tt-form-label__text">Avatar</span>
+      <app-avatar-upload (avatarSelected)="avatar = $event"></app-avatar-upload>
+      </label>
+
   <label class="tt-form-label">
     <span class="tt-form-label__text">Skills</span>
     <input type="text" class="tt-form-input" formControlName="stack">
@@ -31,7 +37,7 @@
 
     <div>
       <div>
-        <button class="btn" (click)="onSave()">Save</button>
+        <button class="btn save-btn" (click)="onSave()">Save</button>
       </div>
     </div>
 </form>

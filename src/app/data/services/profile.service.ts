@@ -33,6 +33,15 @@ export class ProfileService {
     return this.http.patch(`${this.baseApiUrl}/account/me`, profile)
   }
 
+  uploadImage(file: File){
+    const fd = new FormData();
+    fd.append('image', file);
+
+    return this.http
+      .post<Profile>(`${this.baseApiUrl}/account/upload_image`, fd)
+      .pipe(tap((res) => this.me.set(res)));
+  }
+
   getMe(){
     return this.http.get<Profile>(`${this.baseApiUrl}/account/me`).pipe(tap(res => this.me.set(res)))
   }
