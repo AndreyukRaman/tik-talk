@@ -1,0 +1,15 @@
+.profile-search-form{
+  padding: 16px 20px;
+  background: var(--dark-color);
+  border: 1px solid var(--light-color);
+}
+
+.two-columns{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+
+  .tt-form-label{
+    min-width: 0;
+  }
+}
